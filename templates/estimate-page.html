@@ -1,5 +1,16 @@
 {% extends "layout.html" %} {% block body %}
 
+<!-- <form action="/calculate" method="GET">
+    <input autocomplete="off" autofocus name="url" placeholder="Enter Playlist URL" type="text">
+    <input type="submit" value="Calculate">
+</form>
+
+{{output}}
+{{h}} {{m}} {{s}}
+
+<img src="/static/logo.png" alt="">
+
+------------------------------------------ -->
 <div class="container">
   <h1 class="brand"><span>Real Estate Price Prediction</span></h1>
 
@@ -18,34 +29,26 @@
 
     <!-- about FORM -->
     <div class="about">
-      <h3>Add relevant information</h3>
-
-      <form id="data-form" action="/estimate" method=""GET>
-        <p>
-          <label>Your Name</label>
-          <input type="text" name="name" id="name" />
-        </p>
-
-        <p>
-          <label>Age of house in years*</label>
-          <input type="number" name="age" required autocomplete="off"/>
-        </p>
-
-        <p>
-          <label>Distance to nearest metro station in Kms*</label>
-          <input type="number" name="metro" required autocomplete="off" />
-        </p>
-
-        <p>
-          <label>Number of nearby convenience stores*</label>
-          <input type="number" name="store" required autocomplete="off" />
-        </p>
-
+      <p>
+        <label>Hello {{name}}!</label>
+      </p>
+      <p>
+        Age of house: {{age}} years<br>
+        Distance from nearest metro station: {{metro}}Kms<br>
+        Number of nearby convenience stores: {{store}}
+      </p>
+      <p>
+        <label>Predicted price of unit area: ${{price}}</label>
+      </p>
+      <form id="data-form" action="/">
         <p class="full">
-          <button type="submit">Estimate Price</button>
+          <button type="submit">Make another prediction</button>
         </p>
       </form>
-      <!-- End #data-form -->
+      <p>
+        Model being used for prediction: Linear Regression<br>
+        Accuracy of current model: {{accuracy}}
+      </p>
     </div>
     <!-- End .about -->
   </div>
